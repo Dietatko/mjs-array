@@ -1,14 +1,21 @@
-
 # Partial Array prototype polyfill for mJS engine
 
 ## Overview
-
 The [mJS](https://github.com/cesanta/mjs) is a restricted JavaScript engine designed for microcontrollers with limited resources. The array type does not support standard Array prototype to limit the library footprint.
 
 This library adds some of the JavaScript [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) prototype utils. It modifies the prototype of an array instance. As different instances of array object does not share the same prototype object, each instance needs to be initialized separately. An array can be initialized by the Array.create() method. Arrays returned from utility functions are already initialized.
 
 ## Example
+Import library in `mos.yml`:
 ```
+libs:
+  - origin: https://github.com/mongoose-os-libs/mjs
+  - origin: https://github.com/Dietatko/mjs-array
+```
+
+Use in javascript code:
+```
+load("mjs_array.js");
 Array.create([ 1, 2, 3 ])
    .map(function(x) { return  x  *  2; })
    .every(function(x) { return (x  %  2) ==  0; });
@@ -16,7 +23,7 @@ Array.create([ 1, 2, 3 ])
 
 ## Available functions
 Following functions are available:
- - [Array.create()](#array-create) - initializes an array instance
+ - [Array.create()](#arraycreate) - initializes an array instance
  - [Array.from()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/from)
  - [Array.prototype.every()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every)
  - [Array.prototype.filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)
