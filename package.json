@@ -16,10 +16,9 @@
     "array",
     "mjs"
   ],
-  "author": "Andrej Burger <burgera@gmail.com>",
   "author": {
     "name": "Andrej Burger",
-    "email": "burgera@gmail.com",
+    "email": "burgera@gmail.com"
   },
   "license": "Apache-2.0",
   "bugs": {

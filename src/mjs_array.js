@@ -14,20 +14,20 @@ let Array = {
       if (typeof arr !== "array") {
          return null;
       }
-      if (mapFn !== undefined && typeof arr !== "function") {
+      if (mapFn !== undefined && typeof mapFn !== "function") {
          return null;
       }
 
       let dst = Array.create();
 
-      let len = this.length;
+      let len = arr.length;
       if (mapFn) {
          for (let i = 0; i < len; i++) {
-            dst.push(func.apply(me, [this[i], i, this]));
+            dst.push(mapFn.apply(me, [ arr[i], i, arr ]));
          }
       } else {
          for (let i = 0; i < len; i++) {
-            dst.push(this[i]);
+            dst.push(arr[i]);
          }
       }
       return dst;
@@ -49,9 +49,8 @@ let Array = {
          let dst = Array.create();
          let len = this.length;
          for (let i = 0; i < len; i++) {
-            let e = this[i];
-            if (func.apply(me, [ e, i, this ])) {
-               dst.push(e);
+            if (func.apply(me, [ this[i], i, this ])) {
+               dst.push(this[i]);
             }
          }
          return dst;
@@ -60,9 +59,8 @@ let Array = {
       find: function(func, me) {
          let len = this.length;
          for (let i = 0; i < len; i++) {
-            let e = this[i];
-            if (func.apply(me, [ e, i, this ])) {
-               return e;
+            if (func.apply(me, [ this[i], i, this ])) {
+               return this[i];
             }
          }
          return undefined;
@@ -81,7 +79,7 @@ let Array = {
       forEach: function(func, me) {
          let len = this.length;
          for (let i = 0; i < len; i++) { 
-            func.apply(me, [ array[i], i, this ]);
+            func.apply(me, [ this[i], i, this ]);
          }
       },
 
@@ -109,7 +107,7 @@ let Array = {
 
          // The 'i = i' is needed as the mJS parser fails if any statement is missing
          for (i = i; i < len; i++) {
-            acc = func(acc, thia[i], i, this);
+            acc = func(acc, this[i], i, this);
          }
 
          return acc;

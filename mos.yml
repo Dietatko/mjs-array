@@ -3,6 +3,10 @@ description: mJS Array prototype
 type: lib
 version: 0.1
 
+libs_version: ${mos.version}
+modules_version: ${mos.version}
+mongoose_os_version: ${mos.version}
+
 filesystem:
   - mjs_fs
 
