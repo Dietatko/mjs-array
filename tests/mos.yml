@@ -14,6 +14,7 @@ libs:
   - origin: https://github.com/mongoose-os-libs/rpc-service-fs
   - origin: https://github.com/mongoose-os-libs/rpc-uart
   - origin: https://github.com/mongoose-os-libs/mjs
+  - origin: https://github.com/Dietatko/mjs-testing
 
 tags:
   - mjs-array
