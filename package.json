@@ -1,0 +1,32 @@
+{
+  "name": "mjs-array",
+  "version": "0.1.0",
+  "description": "mJS Array prototype",
+  "main": "index.js",
+  "scripts": {
+    "build": "uglifyjs 'src/mjs_array.js' --output 'mjs_fs/mjs_array.js' --mangle --comments"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dietatko/mjs-array.git"
+  },
+  "keywords": [
+    "mongoose-os",
+    "js",
+    "array",
+    "mjs"
+  ],
+  "author": "Andrej Burger <burgera@gmail.com>",
+  "author": {
+    "name": "Andrej Burger",
+    "email": "burgera@gmail.com",
+  },
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Dietatko/mjs-array/issues"
+  },
+  "homepage": "https://github.com/Dietatko/mjs-array#readme",
+  "devDependencies": {
+    "uglify-es": "^3.3.9"
+  }
+}
