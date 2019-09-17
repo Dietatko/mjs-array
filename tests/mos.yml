@@ -7,7 +7,7 @@ modules_version: ${mos.version}
 mongoose_os_version: ${mos.version}
 
 filesystem:
-  - ../mjs_fs
+  - ../fs
   - fs 
 
 libs:

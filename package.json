@@ -2,9 +2,8 @@
   "name": "mjs-array",
   "version": "0.1.0",
   "description": "mJS Array prototype",
-  "main": "index.js",
   "scripts": {
-    "build": "uglifyjs 'src/mjs_array.js' --output 'mjs_fs/mjs_array.js' --mangle --comments"
+    "build": "uglifyjs 'src/mjs_array.js' --output 'fs/mjs_array.js' --mangle --comments"
   },
   "repository": {
     "type": "git",
